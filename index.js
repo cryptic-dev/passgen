@@ -29,8 +29,8 @@ function getSymbol() {
 function generate() {
   var v = lent.value;
 
-  if (!v) {
-    pass.innerHTML = "Length is required";
+   if (!v) {
+    return (pass.innerHTML = "Length is required");
   }
 
   //   if (!upper.checked && !lower.checked && !symbol.checked && !number.checked) {
