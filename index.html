@@ -5,17 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
-    <title>Weather app</title>
+    <title>Password Generator</title>
 </head>
 <body>
-<div class="container">
-    <h1>A Simple Weather App</h1>
-    <form id="form">
-       <input type="text" placeholder="Enter your city" id="search" autofocus> 
-    </form>
-    <main id="main">
+<div class="pass-container">
+    <h1>Password generator</h1>
+    <div class="pass" id="pass">
+        <span id="pw">l823Zs78#Css09@</span>
+    </div>
+    <div class="length">
+        <label for="len">Length for password</label>
+        <input id="len" type="number" min="3" max="40" >
+    </div>
+    <div class="upper">
+        <label for="up">Do you want Uppercases ?</label>
+        <input id="up" type="checkbox" />
+    </div>
+    <div class="lower">
+        <label for="low">Do you want Lowercases ?</label>
+        <input id="low" type="checkbox" />
+    </div>
+    <div class="number">
+        <label for="num">Do you want Numbers ?</label>
+        <input id="num" type="checkbox" />
+    </div>
+    <div class="symbole">
+        <label for="sym">Do you want symbols ?</label>
+        <input id="sym" type="checkbox" />
+    </div>
+    <button class="gen" id="gen">Generate Password</button>
         
-    </main>
+</div>
     
     
 </body>

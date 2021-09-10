@@ -4,11 +4,19 @@
     box-sizing: border-box;
 }
 
-.container {
+.pass-container {
     text-align: center;
-    margin-top: 4rem;
-    
+    margin-top: 20vh;
+    position: relative;
+    line-height: 50px;
 }
-h1 {
-    margin-bottom: 2rem;
+
+.pass {
+    
+    padding: 1rem 8rem;
+    display: inline-block;
+}
+
+#len {
+    width: 60px;
 }

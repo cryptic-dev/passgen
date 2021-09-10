@@ -1,35 +1,57 @@
+const pass = document.getElementById("pw");
+const lent = document.getElementById("len");
+const upper = document.getElementById("up");
+const lower = document.getElementById("low");
+const symbol = document.getElementById("sym");
+const number = document.getElementById("num");
+const gen = document.getElementById("gen");
 
-const form = document.getElementById("form");
-const main = document.getElementById("main");
-const search = document.getElementById("search");
+let a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let b = "abcdefghijklmnopqrstuvwxyz";
+let c = "0123456789";
+let d = "!?;:&é/*$<>()-è_çà=";
 
-
-
-const apiKey = "8ae8b005d87a451c517c7f6e5ed388f1";
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-async function getWeather(){
-    const resp = await fetch(url);
-    const temp = await resp.json();
-    console.log(temp.main.temp)
+function GetUpper() {
+    return a[Math.floor(Math.random() * a.length)]
+}
+function GetLower() {
+    return b[Math.floor(Math.random() * b.length)]
+}
+function GetNum() {
+    return c[Math.floor(Math.random() * c.length)]
+}
+function GetSym() {
+    return d[Math.floor(Math.random() * d.length)]
 }
 
+function Generate() {
+    var v = lent.value;
+    let password = "";
+    
+    for (let i = 0; i<v; i++) {
+        const t = getPass()
+        password += t
 
-function addelement() {
-    const temperature = document.createElement("div");
-    temperature.classList.add("temperature");
-
-    temperature.innerHTML = 
-    `
-    <p> the temp is ${temp.main.temp} for now    `;
-    main.appendChild(temperature);
-}
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const city = search.value;
-    if (city) {
-        getWeather(city)
     }
+    pass.innerHTML = password;
+}
 
-})
+function getPass() {
+    let xs = [];
+    if (upper.checked) {
+       return xs.push(GetUpper());
+    }
+    if (lower.checked) {
+        return xs.push(GetLower())
+    }
+    if (symbol.checked) {
+        return xs.push(GetSym())
+    }
+    if (number.checked) {
+        return xs.push(GetNum())
+    }
+    return xs[Math.floor(Math.random() * xs.length)]
+}
+
+gen.addEventListener("click", Generate)
+
