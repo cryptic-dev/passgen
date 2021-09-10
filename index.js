@@ -33,10 +33,6 @@ function generate() {
     return (pass.innerHTML = "Length is required");
   }
 
-  //   if (!upper.checked && !lower.checked && !symbol.checked && !number.checked) {
-  //     pass.innerHTML = "You need to select at least one type";
-  //   }
-
   let password = [];
 
   for (let i = 0; i < v; i++) {
